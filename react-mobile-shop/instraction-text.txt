@@ -2,7 +2,8 @@
             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     
     #1: Dependency / Module Install:
-        1. Bootstrap Install ---> npm install --save bootstrap
+        1. Bootstrap Install --> npm install --save bootstrap
+        2. React Router Install --> npm install --save react-router-dom
     
     #2: Google Fonts:
         * Oswald & Permanent Marker
