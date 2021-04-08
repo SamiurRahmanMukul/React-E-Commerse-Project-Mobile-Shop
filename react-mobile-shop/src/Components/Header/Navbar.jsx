@@ -20,7 +20,7 @@ export default class Navbar extends Component {
           <li>
             {/* brand name */}
             <Link to="/" className="nav-link">
-              E-Commerce / Mobile Shop
+              MOBILE SHOP / E-COMMERCE
             </Link>
           </li>
         </ul>

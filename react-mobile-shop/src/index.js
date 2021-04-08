@@ -9,10 +9,15 @@ import { BrowserRouter as Router } from "react-router-dom";
 // * import components
 import App from "./App/App";
 
+// * import contextAPI
+import { ProductProvider } from "./ContextAPI/context";
+
 ReactDOM.render(
-  <Router>
-    <App />
-  </Router>,
+  <ProductProvider>
+    <Router>
+      <App />
+    </Router>
+  </ProductProvider>,
   document.getElementById("root")
 );
 

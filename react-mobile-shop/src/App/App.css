@@ -17,8 +17,9 @@ body {
 /* text title */
 .text-title {
   font-family: "Permanent Maker", cursive;
-  letter-spacing: 0.3rem;
   text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  font-weight: bold;
 }
 .text-blue {
   color: var(--lightBlue);
