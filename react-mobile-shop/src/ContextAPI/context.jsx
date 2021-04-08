@@ -5,13 +5,13 @@ import { storeProducts, detailProduct } from "./../Data/data";
 
 const ProductContext = React.createContext();
 
-// * Provider
-// * Consumer
-
 class ProductProvider extends Component {
   state = {
     products: [],
-    detailsProducts: detailProduct,
+    detailProduct: detailProduct,
+    cart: [],
+    modalOpen: false,
+    modalProduct: detailProduct,
   };
 
   componentDidMount() {
@@ -31,12 +31,55 @@ class ProductProvider extends Component {
     });
   };
 
-  handleDetails = () => {
-    console.log("hello from details");
+  getItem = (id) => {
+    const product = this.state.products.find((item) => item.id === id);
+    return product;
   };
 
-  addToCart = () => {
-    console.log("hello from add to cart");
+  handleDetail = (id) => {
+    const product = this.getItem(id);
+    this.setState(() => {
+      return { detailProduct: product };
+    });
+  };
+
+  // ! add item to cart function
+  addToCart = (id) => {
+    // console.log(`hello from add to cart.id is ${id}`);
+
+    let tempProducts = [...this.state.products];
+    const index = tempProducts.indexOf(this.getItem(id));
+    const product = tempProducts[index];
+    product.inCart = true;
+    product.count = 1;
+    const price = product.price;
+    product.total = price;
+
+    this.setState(
+      () => {
+        return {
+          products: [...tempProducts],
+          cart: [...this.state.cart, product],
+        };
+      },
+      () => {
+        console.log(this.state);
+      }
+    );
+  };
+
+  // ! open & close modal function
+  openModal = (id) => {
+    const product = this.getItem(id);
+
+    this.setState(() => {
+      return { modalProduct: product, modalOpen: true };
+    });
+  };
+  closeModal = () => {
+    this.setState(() => {
+      return { modalOpen: false };
+    });
   };
 
   render() {
@@ -44,8 +87,10 @@ class ProductProvider extends Component {
       <ProductContext.Provider
         value={{
           ...this.state,
-          handleDetails: this.handleDetails,
+          handleDetail: this.handleDetail,
           addToCart: this.addToCart,
+          openModal: this.openModal,
+          closeModal: this.closeModal,
         }}
       >
         {this.props.children}

@@ -7,7 +7,9 @@ export const ButtonContainer = Styled.button`
   font-size: 1.4rem;
   background: transparent;
   border: 0.05rem solid var(--mainBlue);
-  color: var(--mainBlue);
+  border-color: ${(props) =>
+    props.cart ? "var(--mainYellow)" : "var(--lightBlue)"}
+  color: ${(prop) => (prop.cart ? "var(--mainYellow)" : "var(--lightBlue)")};
   border-radius: 0.5rem;
   padding: 0.2rem 0.5rem;
   cursor: pointer;
@@ -15,7 +17,8 @@ export const ButtonContainer = Styled.button`
 
   // * hover effect
   &:hover {
-    background: var(--lightBlue);
+    background: ${(prop) =>
+      prop.cart ? "var(--mainYellow)" : "var(--lightBlue)"};
     color: var(--mainWhite);
   }
   &:focus {
