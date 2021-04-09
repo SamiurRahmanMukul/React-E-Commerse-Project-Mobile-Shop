@@ -31,7 +31,7 @@ export default class MyApp extends React.Component {
     // Document on Paypal's currency code: https://developer.paypal.com/docs/classic/api/currency_codes/
 
     const client = {
-      sandbox: process.env.REACT_APP_APP_ID,
+      sandbox: process.env.REACT_MOBILE_SHOP_APP_ID,
       production: "YOUR-PRODUCTION-APP-ID",
     };
 
