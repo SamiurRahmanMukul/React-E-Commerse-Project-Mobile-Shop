@@ -5,7 +5,7 @@ import Product from "./Product";
 import Title from "./../Title/Title";
 
 // * import contextAPI
-import { ProductConsumer } from "./../../ContextAPI/context";
+import { ProductConsumer } from "./../../ContextAPI/Context";
 
 export default class ProductList extends Component {
   render() {

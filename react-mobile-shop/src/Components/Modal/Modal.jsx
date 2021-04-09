@@ -4,7 +4,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 // * import contextAPI
-import { ProductConsumer } from "./../../ContextAPI/context";
+import { ProductConsumer } from "./../../ContextAPI/Context";
 
 // * import custom styled-components
 import { ButtonContainer } from "./../StyledComponents/Button";

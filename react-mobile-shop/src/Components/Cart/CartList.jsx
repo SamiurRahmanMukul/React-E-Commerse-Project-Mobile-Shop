@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+
+// * import cart folder components
 import CartItem from "./CartItem";
 
 export default class CartList extends Component {

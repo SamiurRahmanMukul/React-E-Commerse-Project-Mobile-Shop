@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import { ProductWrapper } from "./../StyledComponents/ProductWrapper";
 
 // * import contextAPI
-import { ProductConsumer } from "./../../ContextAPI/context";
+import { ProductConsumer } from "./../../ContextAPI/Context";
 
 export default class Product extends Component {
   render() {
